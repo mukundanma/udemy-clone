@@ -3,6 +3,7 @@ import Customers from "./components/Customers";
 import { Header } from "./components/Header";
 import HeroCarousel from "./components/HeroCarousel";
 import TopCourses from "./components/TopCourses";
+import Testimonials from "./components/Testimonials";
 
 const customers = [
     {
@@ -122,6 +123,7 @@ function App() {
                 categoriesInfo={categoriesInfo}
                 coursesInCategory={coursesInCategory}
             />
+            <Testimonials />
             <div className="mt-48 text-center">End</div>
         </div>
     );

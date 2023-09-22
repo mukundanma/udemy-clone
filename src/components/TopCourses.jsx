@@ -10,13 +10,12 @@ import Courses from "./Courses";
 
 function TopCourses({ categoriesInfo, coursesInCategory }) {
     const [courseName, setCourseName] = useState("");
-    console.log(categoriesInfo);
-    console.log(coursesInCategory);
-    console.log(courseName);
     return (
-        <div className="px-6 pt-12">
-            <h1 className="text-2xl">A broad selection of courses</h1>
-            <p className="py-4 font-thin">
+        <div className="p-16 pt-16">
+            <h1 className="text-4xl font-semibold">
+                A broad selection of courses
+            </h1>
+            <p className="py-8 font-thin text-xl">
                 Choose from over 210,000 online video courses with new additions
                 published every month
             </p>
@@ -28,6 +27,7 @@ function TopCourses({ categoriesInfo, coursesInCategory }) {
                                 key={value}
                                 value={value}
                                 onClick={(e) => setCourseName(value)}
+                                className="font-semibold"
                             >
                                 {label}
                             </Tab>
@@ -38,7 +38,12 @@ function TopCourses({ categoriesInfo, coursesInCategory }) {
                         categoriesInfo.map(({ value, desc, title }) => (
                             <div key={title}>
                                 <TabPanel key={value} value={value}>
-                                    {desc}
+                                    <div className="pt-8 font-bold text-black text-xl">
+                                        {title}
+                                    </div>
+                                    <div className="py-4 font-thin text-black">
+                                        {desc}
+                                    </div>
                                 </TabPanel>
                             </div>
                         ))}

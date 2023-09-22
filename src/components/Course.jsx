@@ -12,9 +12,9 @@ function Course({ course }) {
     console.log("courseTitle: " + course.title);
     return (
         <Card className="mt-6 w-[25vw] ">
-            <CardHeader color="blue-grey" className="relative h-56">
+            <CardHeader color="blue-gray" className="relative h-56">
                 <img
-                    src={course.image_240x135}
+                    src={course.image_480x270}
                     alt={course.title}
                     className="object-cover h-48 w-240"
                 />

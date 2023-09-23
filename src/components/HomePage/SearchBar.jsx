@@ -9,7 +9,7 @@ function SearchBar() {
                 variant="outlined"
                 label="Search for anything"
                 size="lg"
-                className="rounded-2xl   p-4 pr-16   text-lg"
+                className="rounded-2xl focus:bg-white   p-4 pr-16   text-lg"
             />
             <Button
                 size="sm"

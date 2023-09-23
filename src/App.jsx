@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-import Customers from "./components/Customers";
-import { Header } from "./components/Header";
-import HeroCarousel from "./components/HeroCarousel";
-import TopCourses from "./components/TopCourses";
-import Testimonials from "./components/Testimonials";
+
+import { CourseDetails } from "./components/CourseDetailPage/CourseDetails";
+import HeroCarousel from "./components/HomePage/HeroCarousel";
+import Customers from "./components/HomePage/Customers";
+import Testimonials from "./components/HomePage/Testimonials";
+import TopCourses from "./components/HomePage/TopCourses";
+
+import { Header } from "./components/HomePage/Header";
 
 const customers = [
     {
@@ -115,7 +118,7 @@ function App() {
 
     return (
         <div className="w-full h-screen">
-            <div className="px-10"></div>
+            {/* <div className="px-10"></div>
             <Header />
             <HeroCarousel className="pt-6" />
             <Customers customers={customers} />
@@ -123,8 +126,8 @@ function App() {
                 categoriesInfo={categoriesInfo}
                 coursesInCategory={coursesInCategory}
             />
-            <Testimonials />
-            <div className="mt-48 text-center">End</div>
+            <Testimonials /> */}
+            <CourseDetails></CourseDetails>
         </div>
     );
 }

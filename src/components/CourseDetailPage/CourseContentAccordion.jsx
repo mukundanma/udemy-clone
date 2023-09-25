@@ -14,11 +14,7 @@ import {
 } from "react-icons/fa";
 
 function Icon({ openState, id }) {
-    if (id == openState) {
-        <FaArrowAltCircleUp></FaArrowAltCircleUp>;
-    } else {
-        <FaArrowAltCircleDown></FaArrowAltCircleDown>;
-    }
+    return id == openState ? <FaArrowAltCircleUp /> : <FaArrowAltCircleDown />;
 }
 
 export function CourseContentAccordion({
@@ -29,10 +25,11 @@ export function CourseContentAccordion({
     sectionHead,
 }) {
     return (
-        <div>
+        <div className="px-[4rem] max-w-3xl py-2">
             <Accordion
                 open={openState == id}
                 icon={<Icon openState={openState} id={id}></Icon>}
+                className="p-0 mb-0 rounded-lg border border-blue-gray-100 px-4 shadow-md"
             >
                 <AccordionHeader
                     onClick={function clickHandler() {
@@ -42,7 +39,7 @@ export function CourseContentAccordion({
                     {sectionHead}
                 </AccordionHeader>
                 <AccordionBody>
-                    <ul>
+                    <ul className="p-0">
                         {itemList.map(function getItemList(item) {
                             if (item.item_type == "lecture") {
                                 var icon = <FaVideo></FaVideo>;
@@ -53,34 +50,55 @@ export function CourseContentAccordion({
                             }
                             return (
                                 <li>
-                                    <AccordionHeader
-                                        onClick={function clickHandler(value) {
-                                            value = value == 0 ? 1 : 0;
-                                            return;
-                                        }}
+                                    <Accordion
+                                        open={openState == id}
+                                        icon={null}
+                                        className="p-0 "
                                     >
-                                        <div className="flex flex-row gap-2 justify-between px-4 w-screen ">
-                                            <div className="flex flex-row gap-4 justify-start">
-                                                <div>{icon}</div>
-                                                <div>
-                                                    <a
-                                                        className="hover:text-blue-600 active:text-blue-900 h"
-                                                        href={item.learn_url}
-                                                    >
-                                                        {item.title}
-                                                    </a>
+                                        <AccordionHeader
+                                            onClick={function clickHandler(
+                                                value
+                                            ) {
+                                                value = value == 0 ? 1 : 0;
+                                                return value;
+                                            }}
+                                            className="p-2"
+                                        >
+                                            <div className="flex flex-row gap-2 justify-between px-4 w-screen ">
+                                                <div className="flex flex-row gap-4 justify-start">
+                                                    <div className="pt-2">
+                                                        {icon}
+                                                    </div>
+                                                    <div className="pt-2 text-[1rem] font-normal">
+                                                        <a
+                                                            className="hover:text-blue-600 active:text-blue-900 h"
+                                                            href={
+                                                                item.learn_url
+                                                            }
+                                                        >
+                                                            {item.title}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div className="flex flex-row gap-4 justify-end">
+                                                    <div className="pt-2 text-[1rem] font-normal">
+                                                        {item.content_summary}
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className="flex flex-row gap-4 justify-end">
-                                                <div>
-                                                    {item.content_summary}
-                                                </div>
+                                        </AccordionHeader>
+                                        <AccordionBody>
+                                            <div>
+                                                {item.description
+                                                    .replace(
+                                                        /(<([^>]+)>)/gi,
+                                                        ""
+                                                    )
+                                                    .replace(/&nbsp;/g, "")
+                                                    .replace(/&#039;/g, "'")}
                                             </div>
-                                        </div>
-                                    </AccordionHeader>
-                                    <AccordionBody>
-                                        <div>{item.description}</div>
-                                    </AccordionBody>
+                                        </AccordionBody>
+                                    </Accordion>
                                 </li>
                             );
                         })}

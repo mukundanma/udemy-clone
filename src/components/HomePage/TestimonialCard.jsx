@@ -6,7 +6,7 @@ import {
 } from "@material-tailwind/react";
 import React from "react";
 
-function TestimonialCard(props) {
+export function TestimonialCard(props) {
     const { author, description, courseTitle, courseUrl } = props.testimonial;
     return (
         <Card className="max-w-[20rem]">
@@ -26,4 +26,4 @@ function TestimonialCard(props) {
     );
 }
 
-export default TestimonialCard;
+// export default TestimonialCard;

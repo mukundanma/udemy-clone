@@ -1,5 +1,5 @@
 import { Button, Navbar, Typography } from "@material-tailwind/react";
-import SearchBar from "./SearchBar";
+import {SearchBar} from "./SearchBar";
 import { FaGlobe, FaShoppingCart } from "react-icons/fa";
 
 export function Header() {

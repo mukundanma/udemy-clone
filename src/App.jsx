@@ -1,12 +1,6 @@
 import { useEffect, useState } from "react";
 
 import { CourseDetails } from "./components/CourseDetailPage/CourseDetails";
-import HeroCarousel from "./components/HomePage/HeroCarousel";
-import Customers from "./components/HomePage/Customers";
-import Testimonials from "./components/HomePage/Testimonials";
-import TopCourses from "./components/HomePage/TopCourses";
-
-import { Header } from "./components/HomePage/Header";
 
 const customers = [
     {

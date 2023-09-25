@@ -6,9 +6,9 @@ import {
     TabsHeader,
 } from "@material-tailwind/react";
 import React, { useState } from "react";
-import Courses from "./Courses";
+import { Courses } from "./Courses";
 
-function TopCourses({ categoriesInfo, coursesInCategory }) {
+export function TopCourses({ categoriesInfo, coursesInCategory }) {
     const [courseName, setCourseName] = useState("");
     return (
         <div className="p-16 pt-16">
@@ -53,5 +53,3 @@ function TopCourses({ categoriesInfo, coursesInCategory }) {
         </div>
     );
 }
-
-export default TopCourses;

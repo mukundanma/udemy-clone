@@ -1,6 +1,6 @@
 import React from "react";
 
-function Customer(props) {
+export function Customer(props) {
     return (
         <div>
             <img src={props.imageUrl} alt={props.name} />
@@ -8,4 +8,3 @@ function Customer(props) {
     );
 }
 
-export default Customer;

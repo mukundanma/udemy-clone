@@ -2,7 +2,7 @@ import { Button, Input } from "@material-tailwind/react";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 
-function SearchBar() {
+export function SearchBar() {
     return (
         <div className="relative  w-full max-w-[30rem]  flex items-center justify-center ">
             <Input
@@ -21,4 +21,4 @@ function SearchBar() {
     );
 }
 
-export default SearchBar;
+// export default SearchBar;

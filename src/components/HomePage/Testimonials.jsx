@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import TestimonialCard from "./TestimonialCard";
+import { TestimonialCard } from "./TestimonialCard";
 
 const testimonials = [
     {
@@ -47,7 +47,7 @@ const testimonials = [
     },
 ];
 
-function Testimonials() {
+export function Testimonials() {
     return (
         <div className=" px-16 bg-[#F7F9FA] w-full text-xl font-bold">
             <h1 className="pb-8">
@@ -74,4 +74,4 @@ function Testimonials() {
     );
 }
 
-export default Testimonials;
+// export default Testimonials;

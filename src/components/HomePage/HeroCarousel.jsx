@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Carousel, Typography } from "@material-tailwind/react";
 
-function HeroCarousel() {
+export function HeroCarousel() {
     return (
         <div className="  pt-16 pb-10 bg-white border-2">
             <Carousel className=" pt-4 rounded-xl">
@@ -61,5 +61,3 @@ function HeroCarousel() {
         </div>
     );
 }
-
-export default HeroCarousel;

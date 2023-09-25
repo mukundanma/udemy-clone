@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Header } from "../HomePage/Header";
-import { CourseDetailBanner } from "./CourseDetailBanner";
-import { CourseObjectivesCard } from "./CourseObjectivesCard";
-import { CourseIncludesCard } from "./CourseIncludesCard";
 import { CourseContent } from "./CourseContent";
 import { CourseContentAccordion } from "./CourseContentAccordion";
+import { CourseDetailBanner } from "./CourseDetailBanner";
+import { CourseIncludesCard } from "./CourseIncludesCard";
+import { CourseObjectivesCard } from "./CourseObjectivesCard";
+import { StudentsAlsoBoughtSection } from "./StudentsAlsoBoughtSection";
 
 //Course Overview - https://mocki.io/v1/af655e00-3bf6-4365-b98d-be686da370a0
 //Course Content - https://mocki.io/v1/e19a04f2-4b9d-43a8-b257-90eebb7ca5d9
@@ -14,6 +15,7 @@ import { CourseContentAccordion } from "./CourseContentAccordion";
 export function CourseDetails() {
     const [course, setCourse] = useState({});
     const [courseContent, setCourseContent] = useState({});
+    const [studentAlsoBought, setStudentsAlsoBought] = useState({});
 
     useEffect(() => {
         const url = "https://mocki.io/v1/af655e00-3bf6-4365-b98d-be686da370a0";
@@ -45,6 +47,17 @@ export function CourseDetails() {
         //     console.log(responseData.curriculum_context);
         //     setCourseContent(responseData.curriculum_context);
         // });
+    }, []);
+
+    useEffect(() => {
+        const url = "https://mocki.io/v1/298e7b59-b660-4d4b-8f0e-8608208fd412";
+        fetch(url)
+            .then((response) => response.json())
+            .then((responseData) => {
+                console.log(responseData);
+                setStudentsAlsoBought(responseData);
+            })
+            .catch((reason) => console.log(reason));
     }, []);
 
     var [openState, setOpenState] = useState({});
@@ -79,6 +92,9 @@ export function CourseDetails() {
                         </div>
                     );
                 })}
+                <StudentsAlsoBoughtSection
+                    data={studentAlsoBought}
+                ></StudentsAlsoBoughtSection>
             </div>
         );
     }

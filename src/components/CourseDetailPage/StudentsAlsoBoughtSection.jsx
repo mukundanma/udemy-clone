@@ -3,7 +3,7 @@ import React from "react";
 import { StudentsAlsoBoughtCard } from "./StudentsAlsoBoughtCard";
 
 export function StudentsAlsoBoughtSection({ data }) {
-    if (data != undefined) {
+    if (data?.units?.length > 1) {
         return (
             <div>
                 <List className="px-0">
@@ -15,6 +15,7 @@ export function StudentsAlsoBoughtSection({ data }) {
                         return (
                             <StudentsAlsoBoughtCard
                                 data={item}
+                                key={data.id}
                             ></StudentsAlsoBoughtCard>
                         );
                     })}

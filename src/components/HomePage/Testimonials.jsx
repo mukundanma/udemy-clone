@@ -65,7 +65,7 @@ export function Testimonials() {
                 className="grid grid-cols-3 gap-4 px-5 justify-center items-center"
             >
                 {testimonials.map((testimonial) => (
-                    <SwiperSlide>
+                    <SwiperSlide key={testimonial.id}>
                         <TestimonialCard testimonial={testimonial} />
                     </SwiperSlide>
                 ))}
@@ -73,5 +73,3 @@ export function Testimonials() {
         </div>
     );
 }
-
-// export default Testimonials;

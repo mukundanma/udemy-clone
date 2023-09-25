@@ -1,5 +1,5 @@
 import React from "react";
-import {Course} from "./Course";
+import { Course } from "./Course";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -24,20 +24,20 @@ export function Courses({ courses }) {
                 onSwiper={(swiper) => console.log(swiper)}
                 className="grid grid-cols-3  gap-100  px-20 justify-center items-center"
             >
-                {courses &&
-                    courses.map((course) => {
-                        return (
-                            <SwiperSlide className="flex  flex-col justify-center items-center text-black  pb-10  ">
-                                <Course
-                                    className="flex justify-center items-center"
-                                    course={course}
-                                />
-                            </SwiperSlide>
-                        );
-                    })}
+                {courses?.map((course) => {
+                    return (
+                        <SwiperSlide
+                            key={course.id}
+                            className="flex  flex-col justify-center items-center text-black  pb-10  "
+                        >
+                            <Course
+                                className="flex justify-center items-center"
+                                course={course}
+                            />
+                        </SwiperSlide>
+                    );
+                })}
             </Swiper>
         </div>
     );
 }
-
-// export default Courses;

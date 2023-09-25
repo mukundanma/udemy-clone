@@ -11,18 +11,19 @@ import { Courses } from "./Courses";
 export function TopCourses({ categoriesInfo, coursesInCategory }) {
     const [courseName, setCourseName] = useState("");
     return (
-        <div className="p-16 pt-16">
-            <h1 className="text-4xl font-semibold">
-                A broad selection of courses
-            </h1>
-            <p className="py-8 font-thin text-xl">
-                Choose from over 210,000 online video courses with new additions
-                published every month
-            </p>
-            <Tabs value="html">
-                <TabsHeader>
-                    {categoriesInfo &&
-                        categoriesInfo.map(({ label, value }) => (
+        categoriesInfo &&
+        coursesInCategory && (
+            <div className="p-16 pt-16">
+                <h1 className="text-4xl font-semibold">
+                    A broad selection of courses
+                </h1>
+                <p className="py-8 font-thin text-xl">
+                    Choose from over 210,000 online video courses with new
+                    additions published every month
+                </p>
+                <Tabs value="html">
+                    <TabsHeader>
+                        {categoriesInfo?.map(({ label, value }) => (
                             <Tab
                                 key={value}
                                 value={value}
@@ -32,10 +33,9 @@ export function TopCourses({ categoriesInfo, coursesInCategory }) {
                                 {label}
                             </Tab>
                         ))}
-                </TabsHeader>
-                <TabsBody>
-                    {categoriesInfo &&
-                        categoriesInfo.map(({ value, desc, title }) => (
+                    </TabsHeader>
+                    <TabsBody>
+                        {categoriesInfo?.map(({ value, desc, title }) => (
                             <div key={title}>
                                 <TabPanel key={value} value={value}>
                                     <div className="pt-8 font-bold text-black text-xl">
@@ -47,9 +47,10 @@ export function TopCourses({ categoriesInfo, coursesInCategory }) {
                                 </TabPanel>
                             </div>
                         ))}
-                </TabsBody>
-            </Tabs>
-            <Courses courses={coursesInCategory[courseName]} />
-        </div>
+                    </TabsBody>
+                </Tabs>
+                <Courses courses={coursesInCategory[courseName]} />
+            </div>
+        )
     );
 }

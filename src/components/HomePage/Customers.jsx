@@ -1,7 +1,7 @@
 import React from "react";
-import Customer from "./Customer";
+import { Customer } from "./Customer";
 
-function Customers(props) {
+export function Customers(props) {
     return (
         <div className="flex flex-col w-full h-56 justify-center items-center bg-blue-gray-50">
             <p className="pb-8 font-thin text-gray-800">
@@ -20,5 +20,3 @@ function Customers(props) {
         </div>
     );
 }
-
-export default Customers;

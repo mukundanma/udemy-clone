@@ -1,5 +1,5 @@
 import React from "react";
-import Course from "./Course";
+import {Course} from "./Course";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -9,7 +9,7 @@ import "./../../index.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
-function Courses({ courses }) {
+export function Courses({ courses }) {
     return (
         <div className="flex justify-center items-center ">
             <Swiper
@@ -40,4 +40,4 @@ function Courses({ courses }) {
     );
 }
 
-export default Courses;
+// export default Courses;

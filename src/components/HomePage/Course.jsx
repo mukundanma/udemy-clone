@@ -8,7 +8,7 @@ import {
 } from "@material-tailwind/react";
 import React from "react";
 
-function Course({ course }) {
+export function Course({ course }) {
     console.log("courseTitle: " + course.title);
     return (
         <Card className="mt-6 w-[25vw] ">
@@ -35,5 +35,3 @@ function Course({ course }) {
         </Card>
     );
 }
-
-export default Course;
